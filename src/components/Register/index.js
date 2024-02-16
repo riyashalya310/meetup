@@ -3,7 +3,7 @@ import ReactContext from '../context/ReactContext'
 import Header from '../Header'
 import TopicItem from '../TopicItem'
 
-const Register = () => (
+const Register = props => (
   <ReactContext.Consumer>
     {value => {
       const {
@@ -12,9 +12,9 @@ const Register = () => (
         onChangeName,
         onChangeTopic,
         onSubmitForm,
-        topicsList,
         error,
       } = value
+      const {topicsList} = props
       return (
         <>
           <Header />
@@ -35,7 +35,7 @@ const Register = () => (
                   onChange={onChangeName}
                 />
                 <label htmlFor="topic">TOPICS</label>
-                <select value={topic}>
+                <select>
                   {topicsList.map(topic1 => (
                     <TopicItem details={topic1} onChangeTopic={onChangeTopic} />
                   ))}

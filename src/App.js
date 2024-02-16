@@ -69,12 +69,16 @@ class App extends Component {
           onChangeName: this.onChangeName,
           onChangeTopic: this.onChangeTopic,
           onSubmitForm: this.onSubmitForm,
-          topicsList,
         }}
       >
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/register" component={Register} />
+          <Route
+            exact
+            path="/register"
+            component={Register}
+            topicsList={topicsList}
+          />
           <Route exact path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>
