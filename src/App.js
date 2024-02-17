@@ -1,4 +1,4 @@
-import {Switch, Route, Redirect} from 'react-router-dom'
+import {Switch, Route, Redirect, withRouter} from 'react-router-dom'
 import {Component} from 'react'
 import './App.css'
 import Home from './components/Home'
@@ -76,8 +76,9 @@ class App extends Component {
           <Route
             exact
             path="/register"
-            component={Register}
-            topicsList={topicsList}
+            render={routeProps => (
+              <Register {...routeProps} topicsList={topicsList} />
+            )}
           />
           <Route exact path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
@@ -87,4 +88,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default withRouter(App)

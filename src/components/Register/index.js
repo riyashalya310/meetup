@@ -6,14 +6,7 @@ import TopicItem from '../TopicItem'
 const Register = props => (
   <ReactContext.Consumer>
     {value => {
-      const {
-        name,
-        topic,
-        onChangeName,
-        onChangeTopic,
-        onSubmitForm,
-        error,
-      } = value
+      const {name, onChangeName, onChangeTopic, onSubmitForm, error} = value
       const {topicsList} = props
       return (
         <>
@@ -37,7 +30,11 @@ const Register = props => (
                 <label htmlFor="topic">TOPICS</label>
                 <select>
                   {topicsList.map(topic1 => (
-                    <TopicItem details={topic1} onChangeTopic={onChangeTopic} />
+                    <TopicItem
+                      details={topic1}
+                      onChangeTopic={onChangeTopic}
+                      key={topic1.id}
+                    />
                   ))}
                 </select>
                 <button type="submit">Register Now</button>
