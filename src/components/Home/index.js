@@ -11,6 +11,8 @@ const Home = props => (
         const {history} = props
         history.replace('/register')
       }
+      const {topicsList} = props
+      const valueToBeDisplayed = topicsList.find(topic1 => topic1.id === topic)
       return (
         <>
           <Header />
@@ -28,7 +30,7 @@ const Home = props => (
             ) : (
               <div>
                 <h1>Hello {name}</h1>
-                <p>Welcome to {topic}</p>
+                <p>Welcome to {valueToBeDisplayed.displayText}</p>
               </div>
             )}
             <img

@@ -13,7 +13,7 @@ const Register = props => (
           <Header />
           <div>
             <img
-              src="https://assets.ccbp.in/frontend/react-js/website-register-img.png"
+              src="https://assets.ccbp.in/frontend/react-js/meetup/website-register-img.png"
               alt="website register"
             />
             <div>

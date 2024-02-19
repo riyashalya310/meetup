@@ -72,7 +72,13 @@ class App extends Component {
         }}
       >
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route
+            exact
+            path="/"
+            render={routeProps => (
+              <Home {...routeProps} topicsList={topicsList} />
+            )}
+          />
           <Route
             exact
             path="/register"

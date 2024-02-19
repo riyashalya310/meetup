@@ -7,10 +7,8 @@ const TopicItem = props => {
     onChangeTopic(id)
   }
   return (
-    <option value={id}>
-      <button type="button" onClick={changeTopic}>
-        {displayText}
-      </button>
+    <option value={id} onClick={changeTopic}>
+      {displayText}
     </option>
   )
 }
